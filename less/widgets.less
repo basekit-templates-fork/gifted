@@ -42,7 +42,7 @@
 // -----------------------------
 
 .widget__logo {
-    margin-right: 10px;
+    margin-right: 20px;
     @media @tablet {
         margin-right: 0;
     }
@@ -78,7 +78,7 @@
 
     @media @tablet {
         -webkit-order: 1;
-        -ms-flex-order: 1; 
+        -ms-flex-order: 1;
         order: 1;
         text-align: left;
         display: block;
@@ -172,7 +172,7 @@
     }
 }
 
-// Folder Item Parent: Gives arrow 
+// Folder Item Parent: Gives arrow
 .item-name--parent:after {
     display: inline-block;
     vertical-align: middle;
@@ -208,9 +208,21 @@
     background-size: cover;
     min-height: 500px;
     display: table;
-    min-height: 500px;
-    height: 500px;
+    min-height: 800px;
     width: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+
     @media @tablet {
         min-height: 400px;
     }
@@ -225,12 +237,46 @@
 
 .feature__content-wrap {
     text-align:center;
-    max-width: 80%;
-    vertical-align: middle;
-    display: table-cell;
-    background-color: fade(@color-swatch4, 20%);
+    width: 100%;
+
+    padding: 0;
+    background-color: fade(black, 60%);
     @media @tablet {
         max-width:100%;
+    }
+}
+
+// Feature Content Inner Wrap
+// --------------------------
+
+.feature__content-inner-wrap {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @media @tablet {
+        display: block;
     }
 }
 
@@ -239,8 +285,8 @@
 // ---------------
 
 .feature__headline {
-    max-width: 70%;
-    margin: 0px auto;
+    margin: 0;
+    padding: 0;
     @media @tablet {
         font-size: bkscale(@font-swatch8-font-size,0.8);
         line-height: bkscale(@font-swatch8-line-height,0.9);
@@ -253,8 +299,10 @@
 }
 
 .feature__strapline {
-    max-width: 50%;
-    margin: 0px auto;
+    margin: 0 0 0 1em;
+    padding: 0;
+    border-left: 1px solid fade(@color-swatch1, 30%);
+    padding-left: 1em;
     @media @tablet {
         font-size: bkscale(@font-swatch9-font-size,0.9);
         line-height: bkscale(@font-swatch9-line-height,0.9);
@@ -270,18 +318,22 @@
 // Feature Button
 // ---------------
 
-.feature__button { 
-    margin: 10px 0 0 0; 
+.feature__button {
+    margin: 0 0 0 auto;
     border: 1px solid @color-swatch1;
     color: @font-swatch8-color;
+
+    @media @tablet {
+        margin-top: 1em;
+    }
 }
 
 // Default Page Feature
 // --------------------------
 
 .default-feature .feature__background-image {
-    min-height: 150px;
-    height: 150px;
+    min-height: 200px;
+    height: 200px;
 }
 
 
@@ -528,7 +580,7 @@
     border: 1px solid @color-swatch7;
     padding: 10px;
     margin: 0;
-    .image-title, 
+    .image-title,
     .image-description {
         color: @font-swatch8-color;
         text-shadow: none;
@@ -556,19 +608,19 @@
 
 // -----------------------------
 // 7.  #Slideshow
-// ----------------------------- 
+// -----------------------------
 
 // Slideshow Layout
 // ----------------
 
 // Slideshow Height
-.responsiveslideshow, 
+.responsiveslideshow,
 .responsiveslideshow__figure {
     position: relative;
     min-height: 400px;
 }
 
-.responsiveslideshow__slideshow-controls, 
+.responsiveslideshow__slideshow-controls,
 .responsiveslideshow__caption {
     text-align: center;
     margin-top: 15px;
@@ -602,7 +654,7 @@
     }
 }
 
-.responsiveslideshow__image-title, 
+.responsiveslideshow__image-title,
 .responsiveslideshow__image-description {
     padding: 0 10%;
 }
@@ -683,6 +735,7 @@ button, .button {
     background-color: transparent;
     border: 1px solid @color-swatch4;
     color: @font-swatch7-color;
+    border-radius: 50px;
 }
 
 .feature__button {
@@ -690,7 +743,6 @@ button, .button {
     background-color: transparent;
     padding: 8px 30px;
     color: @font-swatch9-color;
-        margin: 10px 0 0 0; 
     &:hover {
         border: 1px solid transparent;
     }
@@ -710,7 +762,7 @@ button, .button {
 .clicktocall__phone-number-link {
     &:hover {
         text-decoration: none;
-    }   
+    }
 }
 
 .phone-number-link {
@@ -733,11 +785,12 @@ button, .button {
 //  8.6 #SLIDESHOW
 //  --------------
 
-.responsiveslideshow__next-button, 
+.responsiveslideshow__next-button,
 .responsiveslideshow__previous-button,
 .responsiveslideshow__pause-toggle {
     background-color: @color-swatch3;
     color: @font-swatch8-color;
+    border: none;
 }
 
 
@@ -760,7 +813,7 @@ button, .button {
 
 // Inputs
 input.input[type=email],
-input.input[type=search], 
+input.input[type=search],
 .contact-form__textarea {
     border:0;
     border-bottom:1px solid @color-swatch7;
@@ -831,7 +884,8 @@ input.input[type=search],
     border: 1px solid @color-swatch4;
     padding: 10px;
     display: inline-block;
-        color: @font-swatch4-color;
+    color: @font-swatch4-color;
+    border-radius: 40px;
 }
 
 
@@ -959,8 +1013,8 @@ input.input[type=search],
     .socialicons__social-item a:hover {
         border: 0;
     }
-    input.input[type=email], 
-    input.input[type=search], 
+    input.input[type=email],
+    input.input[type=search],
     .contact-form__textarea {
         color: @font-swatch5-color;
     }

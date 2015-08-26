@@ -33,6 +33,34 @@
 	}
 }
 
+.navigation-item:not(.navigation-item--child):not(:last-child) {
+    .item-name {
+        position: relative;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 2em;
+            top: 50%;
+            margin-top: -1em;
+            background-color: fade(@font-swatch6-color, 50%);
+            -webkit-transform: rotate(12deg);
+            -moz-transform: rotate(12deg);
+            -o-transform: rotate(12deg);
+            -ms-transform: rotate(12deg);
+            transform: rotate(12deg);
+
+            @media @tablet {
+                display: none;
+            }
+        }
+    }
+}
+
 
 // Navigation Link
 .navigation-item .item-name {
@@ -90,6 +118,7 @@
 	background-color:@color-swatch1;
 	border: 1px solid @color-swatch7;
     white-space: normal;
+    text-align: left;
 	.navigation__item-name {
 		color:@font-swatch9-color;
 	}

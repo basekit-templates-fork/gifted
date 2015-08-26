@@ -67,6 +67,14 @@
   margin: 25px 25px 0;
 }
 
+
+.blogpostlist__read-more {
+    .button;
+    &:hover {
+        color: @font-swatch9-color !important;
+    }
+}
+
 // Blog Post List Footer
 .blogpostlist__post-footer {
     width: 100%;
@@ -76,9 +84,10 @@
         display: inline-block;
         padding: 20px;
         margin: 0 auto;
-        border: 1px solid @color-swatch7;
     }
 }
+
+
 
 // List and Single Post
 
@@ -142,4 +151,16 @@ hr {
 
 .blogpost__sharing-links {
     margin-top: 15px;
+}
+
+
+// Blog Post List Pagination
+
+.blogpostlist__pagination-list {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
