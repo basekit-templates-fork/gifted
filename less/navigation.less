@@ -33,7 +33,7 @@
 	}
 }
 
-.navigation-item:not(.navigation-item--child):not(:last-child) {
+.navigation-item:not(:last-child) {
     .item-name {
         position: relative;
 
@@ -61,6 +61,10 @@
     }
 }
 
+
+.navigation-item.navigation-item--child .item-name:before {
+    display: none;
+}
 
 // Navigation Link
 .navigation-item .item-name {
